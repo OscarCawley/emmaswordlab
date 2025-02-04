@@ -1,0 +1,85 @@
+section {
+    max-width: 50rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.experience {
+    background-color: #f5e6f9;
+    padding: 2rem 3rem;
+}
+
+.experience h2 {
+    text-align: center;
+    color: #a132cd;
+    font-size: 30px;
+    margin: 0;
+}
+
+.experience h3 {
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    margin: 0.25rem 0;
+}
+
+.experience h4 {
+    text-align: center;
+    color: white;
+    background-color: #a132cd;
+    font-size: 16px;
+    margin: 0.25rem auto;
+    padding: 0 1rem;
+    max-width: fit-content;
+    border-radius: 1rem;
+}
+
+@media (max-width: 950px) {
+    section {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 850px) {
+    section {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 650px) {
+    .experience h2 {
+        font-size: 28px;
+    }
+
+    .experience h3 {
+        font-size: 17px;
+    }
+
+    .experience h4 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    section {
+        max-width: 70%;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        line-height: 1.25rem;
+    }
+
+    p {
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .experience h2 {
+        font-size: 26px;
+    }
+}

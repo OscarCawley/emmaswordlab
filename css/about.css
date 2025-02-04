@@ -1,0 +1,162 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+#about .flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60rem;
+}
+
+#about .nested-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+#about .nested-flex img{
+    width: 26rem;
+    height: auto;
+    margin: 2rem;
+}
+
+#about #grad {
+    margin-top: 0;
+}
+
+#about .textbox {
+    box-sizing: border-box;
+    padding: 3rem;
+    margin: 0 1rem;
+}
+
+#about .textbox p:first-of-type {
+    margin-top: 0;
+}
+
+#about .textbox p:last-of-type {
+    margin-bottom: 0;
+}
+
+#about #pink {
+    background-color: #d69ce7;
+    margin-top: 6rem;
+}
+
+#about #l-pink {
+    background-color: #f5e6f9;
+}
+
+#about ul {
+    padding-left: 2rem;
+}
+
+#about .bold {
+    font-weight: 700;
+}
+
+#faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#faq h2 {
+    font-size: 32px;
+    color: #a132cd;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+    width: 100%;
+}
+
+.dropdown div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #d69ce7;
+}
+
+.dropdown h3 {
+    font-weight: 500;
+}
+
+.dropdown button {
+    border: none;
+    background-color: #f5e6f9;
+    color: #a132cd;
+    border-radius: 0.5rem;
+    height: 2rem;
+    padding: 0 6px;
+    font-size: 13px;
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    line-height: 1.5rem;
+    color: rgb(51, 51, 51);
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 10px;
+    margin: 5px 0;
+}
+
+@media (max-width: 1050px) {
+    #about .nested-flex img {
+        display: none;
+    }
+
+    #about .flex-row {
+        flex-direction: column;
+    }
+
+    #about #pink {
+        margin-top: 0;
+    }
+
+    .flex-column p {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 650px) {
+    #about .textbox {
+        padding: 2.25rem;
+    }
+
+    .dropdown-content {
+        line-height: 1.25rem;
+    }
+}
+
+@media (max-width: 400px) {
+    #about .textbox {
+        padding: 1.5rem;
+    }
+
+    #faq h2 {
+        font-size: 24px;
+    }
+
+    .dropdown-content {
+        line-height: 1rem;
+    }
+}

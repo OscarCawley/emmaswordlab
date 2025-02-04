@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+body {
+    font-family: "Alegreya";
+    font-weight: 500;
+    font-feature-settings: "lnum";
+    min-width: 320px;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+header img {
+    width: 25rem;
+    margin-top: 3rem;
+}
+
+header h3 {
+    display: inline-block;
+    color: #a132cd;
+    word-spacing: 3rem;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    transform: scale(1.1, 1);
+}
+
+header a {
+    color: black;
+    padding: 0 1rem;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+header a.active {
+    color: #a132cd;
+}
+
+header a:hover {
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    background-color: #a132cd;
+}
+
+header a:active {
+    background-color: #a132cd;
+}
+
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footer a {
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+#footer div {
+    margin-bottom: 1rem;
+}
+
+#footer img {
+    margin: 0 0.5rem;
+}
+
+#footer p {
+    margin: 0;
+}
+
+.w-button {
+    border: none;
+    padding: 0.8rem 1.2rem;
+    margin-top: 0.5rem;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Alegreya";
+    width: fit-content;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.w-button:hover {
+    animation: bounce 1s ease infinite;
+    cursor: pointer;
+}
+
+.w-button:active {
+    background-color: #a132cd;
+    color: white;
+}
+
+.w-button {
+    background-color: white;
+    color: #a132cd;
+}
+
+.hyperlink {
+    text-decoration: none;
+    color: #a132cd;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+p {
+    line-height: 2rem;
+    text-align: justify;
+}
+
+li {
+    text-align: justify;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+#sidebar-menu {
+    display: none;
+}
+
+#hamburger-input {
+    display: none;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+    background: black;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    #hamburger-menu {
+        display: block;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(
+            to bottom, 
+            #d69ce7, #d69ce7 20%, 
+            white 20%, white 40%, 
+            #d69ce7 40%, #d69ce7 60%, 
+            white 60%, white 80%, 
+            #d69ce7 80%, #d69ce7 100%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2rem;
+        cursor: pointer;
+    }
+    
+    #sidebar-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 15rem;
+        height: 100%;
+        background-color: white;
+        padding: 0px 1rem;
+        box-sizing: border-box;
+        z-index: 4;
+        transition: 0.3s;
+        cursor: default;
+    }
+    
+    #sidebar-menu h3 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 30px;
+        font-style: normal;
+        margin: 2rem auto 1rem auto;
+        width: 100%;
+    }
+    
+    #sidebar-menu ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #sidebar-menu li {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    
+    #hamburger-input:checked + #hamburger-menu #sidebar-menu {
+        transform: translateX(-15rem);
+    }
+    
+    #hamburger-input:checked ~ .overlay{
+        visibility: visible;
+        opacity: 0.4;
+    }
+
+    #main-nav {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    p {
+        line-height: 1.8rem;
+    }
+
+    header img {
+        width: 20rem;
+    }
+
+    header h3 {
+        font-size: 16px;
+        word-spacing: 2rem;
+    }
+
+    #hamburger-menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 1.75rem;
+    }
+
+    #sidebar-menu {
+        width: 13rem;
+    }
+
+    #sidebar-menu h3 {
+        font-size: 27px;
+    }
+
+    #sidebar-menu a {
+        font-size: 18px;
+    }
+
+    #hamburger-input:checked + #hamburger-menu #sidebar-menu {
+        transform: translateX(-13rem);
+    }
+
+    #footer a {
+        font-size: 16px;
+    }
+
+    #footer img {
+        width: 35px;
+        height: auto;
+    }
+
+    .w-button, .w-button {
+        padding: 0.7rem 1.1rem;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    body {
+        font-size: 13px;
+    }
+
+    p {
+        line-height: 1.7rem;
+    }
+
+    header img {
+        width: 15rem;
+    }
+
+    header h3 {
+        font-size: 15px;
+        word-spacing: 1.5rem;
+    }
+
+    #hamburger-menu {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin: 1.25rem;
+    }
+
+    #sidebar-menu {
+        width: 12rem;
+    }
+
+    #sidebar-menu h3 {
+        font-size: 25px;
+    }
+
+    #sidebar-menu a {
+        font-size: 17px;
+    }
+
+    #hamburger-input:checked + #hamburger-menu #sidebar-menu {
+        transform: translateX(-12rem);
+    }
+
+    #footer a {
+        font-size: 15px;
+    }
+
+    #footer img {
+        width: 30px;
+        height: auto;
+    }
+
+    .w-button, .w-button {
+        padding: 0.6rem 1rem;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    p {
+        line-height: 1.65rem;
+    }
+
+    header img {
+        width: 12.5rem;
+    }
+
+    header h3 {
+        font-size: 14px;
+        word-spacing: 1.25rem;
+    }
+
+    #hamburger-menu {
+        width: 2rem;
+        height: 2rem;
+        margin: 1rem;
+    }
+
+    #footer a {
+        font-size: 14px;
+    }
+
+    #footer img {
+        width: 27.5px;
+        height: auto;
+    }
+
+    .w-button, .w-button {
+        padding: 0.5rem 0.9rem;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 327px) {
+    #hamburger-menu {
+        margin-right: 0.8rem;
+    }
+}

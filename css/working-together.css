@@ -1,0 +1,92 @@
+#main {
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+img[alt="Working Together"] {
+    width: 35%;
+    margin-bottom: 3rem;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #d69ce7;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.flex-row:nth-child(2n) {
+    background-color: #f5e6f9;
+}
+
+.textbox h2 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+#tc-header {
+    margin-bottom: 0.5rem;
+}
+
+img[alt="PDF"] {
+    width: 5rem;
+}
+
+@media (max-width: 650px) {
+    img[alt="Working Together"] {
+        width: 40%;
+    }
+
+    img[alt="PDF"] {
+        width: 4.5rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .textbox ul {
+        padding-left: 30px;
+    }
+
+    img[alt="Working Together"] {
+        width: 50%;
+        margin-bottom: 2.5rem;
+    }
+
+    img[alt="PDF"] {
+        width: 4rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .flex-row {
+        padding: 1.5rem;
+    }
+    .textbox h2 {
+        font-size: 23px;
+    }
+
+    .textbox ul {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    .textbox h2 {
+        font-size: 20px;
+    }
+
+    img[alt="Working Together"] {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    img[alt="PDF"] {
+        width: 3.5rem;
+    }
+}
+
