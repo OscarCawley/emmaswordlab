@@ -67,6 +67,10 @@
     font-weight: 700;
 }
 
+#accessibility-scheme {
+    max-width: 50rem;
+}
+
 #faq {
     display: flex;
     flex-direction: column;
