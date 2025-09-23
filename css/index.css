@@ -74,15 +74,15 @@
 
 .testimonial h3 {
     text-align: center;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .testimonial p {
-    max-width: 15rem;
+    max-width: 17rem;
     min-width: 15rem;
     line-height: normal;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
 }
 
