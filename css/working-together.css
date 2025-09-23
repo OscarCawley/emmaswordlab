@@ -28,7 +28,13 @@ img[alt="Working Together"] {
     background-color: #f5e6f9;
 }
 
+.textbox {
+    text-align: left;
+    width: 100%;
+}
+
 .textbox h2 {
+    text-align: center;
     font-size: 30px;
     margin-top: 0;
 }
