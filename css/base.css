@@ -71,18 +71,22 @@ header a:active {
     background-color: #a132cd;
 }
 
-header nav ul {
+header #main-nav ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+main {
+    text-align: center;
+}
 
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 footer a {
@@ -241,9 +245,9 @@ h1 {
     }
 
     
-    #hamburger-input:checked + #hamburger-menu #sidebar-menu {
-        transform: translateX(-15rem);
-    }
+    #hamburger-input:checked ~ #sidebar-menu {
+    transform: translateX(-15rem);
+}
     
     #hamburger-input:checked ~ .overlay{
         visibility: visible;
@@ -297,9 +301,9 @@ h1 {
         font-size: 18px;
     }
 
-    #hamburger-input:checked + #hamburger-menu #sidebar-menu {
-        transform: translateX(-13rem);
-    }
+    #hamburger-input:checked ~ #sidebar-menu {
+    transform: translateX(-13rem);
+}
 
     footer a {
         font-size: 16px;
@@ -353,9 +357,9 @@ h1 {
         font-size: 17px;
     }
 
-    #hamburger-input:checked + #hamburger-menu #sidebar-menu {
-        transform: translateX(-12rem);
-    }
+    #hamburger-input:checked ~ #sidebar-menu {
+    transform: translateX(-12rem);
+}
 
     footer a {
         font-size: 15px;
