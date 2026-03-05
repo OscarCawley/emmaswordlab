@@ -49,25 +49,25 @@ header h3 {
     transform: scale(1.1, 1);
 }
 
-header a {
+header nav a {
     color: black;
     padding: 0 1rem;
     font-size: 20px;
     text-decoration: none;
 }
 
-header a.active {
+header nav a.active {
     color: #a132cd;
 }
 
-header a:hover {
+header nav a:hover {
     color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     background-color: #a132cd;
 }
 
-header a:active {
+header nav a:active {
     background-color: #a132cd;
 }
 
@@ -182,11 +182,16 @@ h1 {
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .35s, visibility .35s, height .35s;
-    overflow: hidden;
+    transition: opacity .35s, visibility .35s;
     background: black;
     z-index: 3;
     pointer-events: none;
+}
+
+#hamburger-input:checked ~ .overlay{
+    visibility: visible;
+    opacity: 0.4;
+    pointer-events: auto;
 }
 
 @media (max-width: 900px) {
