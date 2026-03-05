@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /files/
+
+Sitemap: https://emmaswordlab.com/sitemap.xml
