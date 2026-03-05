@@ -153,6 +153,10 @@ li {
     margin-bottom: 0.5rem;
 }
 
+h1 {
+    margin-top: 0;
+}
+
 #hamburger-menu {
     display: none;
 }
