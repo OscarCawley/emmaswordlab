@@ -162,6 +162,11 @@ h1 {
     font-size: 36px;
 }
 
+h2 {
+    margin-top: 0;
+    font-size: 32px;
+}
+
 #hamburger-menu {
     display: none;
 }
