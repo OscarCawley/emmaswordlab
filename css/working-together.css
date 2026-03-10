@@ -25,28 +25,41 @@ img[alt="Working Together"] {
     gap: 2rem;
 }
 
-.flex-row > :nth-child(2n+1) {
+.dark-pink {
     background-color: #d69ce7;
 }
 
-.flex-row > :nth-child(2n) {
-    background-color: #f5e6f9;
-}
-
-.flex-row > :nth-child(2n+1) h3 {
+.dark-pink h3 {
     color: black;
 }
 
-.textbox {
+.light-pink {
+    background-color: #f5e6f9;;
+}
+
+.small-textbox {
+    box-sizing: border-box;
     text-align: center;
-    background-color: #f5e6f9;
     width: 100%;
     padding: 1rem;
     margin-bottom: 2rem;
 }
 
-.textbox p {
+.textbox {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.textbox p,
+.small-textbox p {
     margin: 0;
+}
+
+.textbox > *:not(:last-child) {
+    margin-bottom: 1rem
 }
 
 #tc-header {
