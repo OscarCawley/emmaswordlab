@@ -142,11 +142,23 @@ footer img {
     color: #a132cd;
 }
 
+.fine-print {
+    color: rgb(53, 53, 53);
+    font-size: 0.9em;
+}
+
+.ribbon {
+    width: 90%;
+    max-width: 60rem;
+    margin-bottom: 2rem;
+}
+
 section {
     margin-bottom: 3rem;
 }
 
 p {
+    margin: 0;
     line-height: 1.8rem;
     text-align: justify;
 }
@@ -165,6 +177,7 @@ h1 {
 h2 {
     margin-top: 0;
     font-size: 32px;
+    color: #a132cd;
 }
 
 h3 {
