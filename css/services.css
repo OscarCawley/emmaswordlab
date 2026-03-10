@@ -1,259 +1,73 @@
-section {
-    max-width: 60rem;
+main {
     margin: 0 auto;
     margin-bottom: 3rem;
-}
-
-#intro {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#intro p {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 3rem;
+#cvs-cover-letters {
+    max-width: 60rem;
+    width: 85%;
+}
+
+#cvs-cover-letters p {
     text-align: center;
-}
-
-#intro #hello {
-    font-size: 18px;
-    margin-bottom: 0.5rem;
-}
-
-#intro img {
-    width: 110%;
-    height: auto;
 }
 
 #application-materials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
+    max-width: 80rem;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 2rem;
-    gap: 0.5rem;
+#application-materials .textbox:nth-child(1),
+#application-materials .textbox:nth-child(4) {
+    background-color: #d69ce7;
 }
 
-.title img {
-    width: 4rem;
-    height: auto;
-}
-
-.title h2 {
-    color: #a132cd;
-    font-size: 32px;
-    margin: 0;
-}
-
-.list-head {
-    font-size: 18px;
-    font-weight: 650;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.text {
-    width: 85%;
+#application-materials .textbox:nth-child(2),
+#application-materials .textbox:nth-child(3) {
     background-color: #f5e6f9;
+}
+
+#application-materials .textbox:nth-child(2) h3,
+#application-materials .textbox:nth-child(3) h3{
+    color: #a132cd;
+}
+
+.textbox {
+    text-align: justify;
     padding: 2rem;
 }
 
-.text p:first-of-type {
-    margin-top: 0;
-}
-
-.text p:last-of-type {
-    margin-bottom: 0;
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 1rem;
-    gap: 1rem;
-}
-
-#application-materials h3 {
-    color: #a132cd;
-    font-size: 28px;
+.textbox h3 {
     text-align: center;
 }
 
-#prices {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-bottom: 1rem;
+#bottom-text {
+    max-width: 60rem;
+    width: 85%;
 }
 
-.price-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
+.fine-print {
+    color: rgb(53, 53, 53);
+    font-size: 0.9em;
 }
 
-.price-list h4 {
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 18px;
-    text-align: center;
-}
-
-.price-list h5 {
-    margin: 0;
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.price-list ul {
-    margin: 0;
-    margin-top: 1rem;
-}
-
-.price-list span::after {
-    content: "Up to";
-}
-
-#general-proofreading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-#general-proofreading h3 {
-    text-align: center;
-}
-
-@media (max-width: 1080px) {
-    section {
-        max-width: 50rem;
+@media (max-width: 1000px) {
+    #application-materials {
+        display: flex;
+        flex-direction: column;
     }
 
-    #application-materials h3 {
-        font-size: 27px;
+    #application-materials .textbox:nth-child(3) {
+        order: 4;
     }
 
-    .price-list h4 {
-        font-size: 17px;
-    }
-
-    .price-list h5 {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 900px) {
-    section {
-        max-width: 40rem;
-    }
-}
-
-@media (max-width: 720px) {
-    section {
-        max-width: 35rem;
-    }
-}
-
-@media (max-width: 650px) {
-    section {
-        max-width: 32.5rem;
-    }
-
-    #application-materials h3 {
-        font-size: 25px;
-    }
-
-    .price-list h4 {
-        font-size: 15px;
-    }
-
-    .price-list h5 {
-        font-size: 15px;
-    }
-
-}
-
-@media (max-width: 600px) {
-    section {
-        max-width: 30rem;
-    }
-}
-
-@media (max-width: 550px) {
-    section {
-        max-width: 27.5rem;
-    }
-
-    .price-list span::after {
-        content: "<";
-    }
-}
-
-@media (max-width: 500px) {
-    section {
-        max-width: 25rem;
-    }
-
-    #application-materials h3 {
-        font-size: 23px;
-    }
-
-    .price-list h4 {
-        font-size: 14px;
-    }
-
-    .price-list h5 {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 450px) {
-    section {
-        max-width: 20rem;
-    }
-
-    #application-materials h3 {
-        font-size: 21px;
-    }
-
-    .price-list h4 {
-        font-size: 13px;
-    }
-
-    .price-list h5 {
-        font-size: 13px;
-    }
-
-    .price-list li {
-        font-size: 11px;
-    }
-
-    .price-list ul {
-        padding-left: 10px;
-    }
-}
-
-@media (max-width: 350px) {
-    section {
-        max-width: 18rem;
-    }
-
-    .price-list ul {
-        padding: 0;
-        list-style-type: none;
+    #application-materials .textbox:nth-child(4) {
+        order: 3;
     }
 }
