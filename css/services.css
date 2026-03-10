@@ -191,19 +191,11 @@ section {
     section {
         max-width: 30rem;
     }
-
-    ul {
-        padding-left: 30px;
-    }
 }
 
 @media (max-width: 550px) {
     section {
         max-width: 27.5rem;
-    }
-
-    ul {
-        padding-left: 20px;
     }
 
     .price-list span::after {
@@ -214,10 +206,6 @@ section {
 @media (max-width: 500px) {
     section {
         max-width: 25rem;
-    }
-
-    ul {
-        padding-left: 16px;
     }
 
     #application-materials h3 {
