@@ -46,12 +46,18 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+header > a {
+    display: block;
+    line-height: 0;
 }
 
 header img {
-    width: 25rem;
-    margin-top: 3rem;
+    width: min(18rem, 60vw);
+    margin-top: 2rem;
 }
 
 header h3 {
@@ -65,32 +71,46 @@ header h3 {
 }
 
 header nav a {
+    display: block;
+    border-radius: 999px;
     color: var(--color-text);
-    padding: 0 1rem;
-    font-size: 20px;
+    padding: 0.55rem 0.9rem;
+    font-size: 19px;
     text-decoration: none;
+    transition: color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 header nav a.active {
     color: var(--color-forest);
+    background-color: var(--color-rose-light);
 }
 
 header nav a:hover {
     color: var(--color-background);
-    box-shadow: 0 2px 8px rgba(6, 26, 30, 0.25);
-    border-radius: 6px;
+    border-radius: 999px;
+    box-shadow: none;
     background-color: var(--color-forest);
 }
 
 header nav a:active {
     background-color: var(--color-sage);
+    border-radius: 999px;
 }
 
 header #main-nav ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+header #main-nav {
+    padding: 0.25rem;
+    border: 1px solid rgba(6, 26, 30, 0.12);
+    border-radius: 999px;
 }
 
 main {
@@ -101,29 +121,55 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 0.75rem;
+    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    padding: 2.5rem 1.5rem 1.25rem;
+    border-top: 1px solid rgba(55, 78, 45, 0.15);
 }
 
 footer a {
-    margin-bottom: 1rem;
+    margin: 0;
     font-size: 18px;
+    font-weight: 600;
+    transition: color 180ms ease;
 }
 
 footer div {
-    margin-bottom: 1rem;
-}
-
-footer img {
-    margin: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 0.25rem;
 }
 
 footer p {
     margin: 0;
+    color: var(--color-brown);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
 }
 
-footer img {
-  width: 40px;
-  height: 40px;
+footer div a {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    margin: 0;
+    border-radius: 50%;
+    background-color: var(--color-rose-light);
+    transition: transform 180ms ease, background-color 180ms ease;
+}
+
+footer div a:hover {
+    transform: translateY(-3px);
+    background-color: var(--color-peach);
+}
+
+footer div img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    object-fit: contain;
 }
 
 .w-button {
@@ -344,6 +390,7 @@ h3 {
     }
 
     header {
+        gap: 1rem;
         margin-bottom: 1.5rem;
     }
 }
@@ -363,8 +410,14 @@ h3 {
         padding-left: 30px;
     }
 
+    header {
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
     header img {
-        width: 20rem;
+        width: min(15rem, 60vw);
+        margin-top: 1.5rem;
     }
 
     header h3 {
@@ -384,18 +437,19 @@ h3 {
         transform: translateX(-100%);
 }
 
-    footer a {
-        font-size: 16px;
-    }
-
-    footer img {
-        width: 35px;
-        height: auto;
-    }
-
     .w-button, .w-button {
         padding: 0.7rem 1.1rem;
         font-size: 16px;
+    }
+
+    footer div a {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    footer div img {
+        width: 1.75rem;
+        height: 1.75rem;
     }
 }
 
@@ -413,27 +467,28 @@ h3 {
         padding-left: 20px;
     }
 
-    header img {
-        width: 15rem;
-    }
-
     header h3 {
         font-size: 15px;
         word-spacing: 1.5rem;
     }
 
-    footer a {
-        font-size: 15px;
-    }
-
-    footer img {
-        width: 30px;
-        height: auto;
-    }
-
     .w-button, .w-button {
         padding: 0.6rem 1rem;
         font-size: 15px;
+    }
+
+    footer div {
+        gap: 0.5rem;
+    }
+
+    footer div a {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    footer div img {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     header {
@@ -467,22 +522,9 @@ h3 {
         padding-left: 16px;
     }
 
-    header img {
-        width: 12.5rem;
-    }
-
     header h3 {
         font-size: 14px;
         word-spacing: 1.25rem;
-    }
-
-    footer a {
-        font-size: 14px;
-    }
-
-    footer img {
-        width: 27.5px;
-        height: auto;
     }
 
     .w-button, .w-button {

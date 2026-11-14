@@ -1,49 +1,64 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+    width: min(100% - 3rem, 72rem);
+    margin: 0 auto;
+}
+
+main > h1 {
+    width: 100%;
+    margin: 0;
+    color: var(--color-forest);
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    line-height: 1.08;
+    text-align: center;
+    animation: about-enter 700ms ease both;
+}
+
+main > section {
+    width: 100%;
+    margin: 0;
+}
+
 #about {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    animation: about-enter 800ms 100ms ease both;
 }
 
 #about .flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-#about .flex-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 1.5rem;
+    margin: 0;
 }
 
 #about .nested-flex {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 30rem;
-}
-
-#about .nested-flex img{
-    width: 26rem;
-    height: auto;
-    margin: 2rem;
-}
-
-#about #grad {
-    margin-top: 0;
+    align-items: stretch;
+    gap: 1.25rem;
+    max-width: none;
+    min-width: 0;
 }
 
 #about .textbox {
     box-sizing: border-box;
-    padding: 3rem;
-    margin: 0 1rem;
+    width: 100%;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    margin: 0;
+    border-radius: 1.25rem;
+    text-align: left;
 }
 
-#about .textbox p:first-of-type {
-    margin-top: 0;
+#about .textbox p {
+    margin: 0 0 1rem;
+    font-size: inherit;
+    text-align: left;
 }
 
 #about .textbox p:last-of-type {
@@ -51,118 +66,168 @@
 }
 
 #about #pink {
+    margin: 0;
     background-color: var(--color-rose-light);
-    margin-top: 6rem;
 }
 
-#about #l-pink {
-    background-color: var(--color-peach);
+#about .nested-flex:nth-child(2) {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
 }
 
-#about ul {
-    padding-left: 2rem;
+#about .nested-flex img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center 43%;
+    margin: 0;
 }
 
-#about .bold {
-    font-weight: 700;
-}
-
-#accessibility-scheme {
-    max-width: 50rem;
+#about #grad {
+    margin: 0;
 }
 
 #faq {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
 }
 
 #faq h2 {
-    font-size: 32px;
+    margin: 0 0 0.75rem;
     color: var(--color-forest);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    text-align: left;
 }
 
-.dropdown {
+#faq .dropdown {
     display: flex;
     flex-direction: column;
-    max-width: 50rem;
     width: 100%;
+    max-width: none;
+    border-bottom: 1px solid rgba(6, 26, 30, 0.16);
 }
 
-.dropdown div {
+#faq .dropdown > div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1.5px solid var(--color-rose);
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border: 0;
 }
 
-.dropdown h3 {
+#faq .dropdown h3 {
+    margin: 0;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
     text-align: left;
-    font-size: 18px;
-    font-weight: 500;
 }
 
-.dropdown button {
-    border: none;
+#faq .dropdown button {
+    display: grid;
+    flex: 0 0 2.25rem;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: 1px solid rgba(6, 26, 30, 0.12);
+    border-radius: 50%;
     background-color: var(--color-rose-light);
-    color: var(--color-forest);
-    border-radius: 0.5rem;
-    height: 2rem;
-    padding: 0 6px;
-    font-size: 13px;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 180ms ease, transform 180ms ease;
 }
 
-.dropdown-content {
+#faq .dropdown button:hover {
+    background-color: var(--color-peach);
+}
+
+#faq .dropdown-content {
+    box-sizing: content-box;
     max-height: 0;
     overflow: hidden;
-    line-height: 1.5rem;
+    margin: 0;
+    padding: 0 0.25rem;
     color: var(--color-text);
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0 10px;
-    margin: 5px 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    transition: max-height 350ms ease, padding 350ms ease;
 }
 
-@media (max-width: 1050px) {
-    #about .nested-flex img {
-        display: none;
+@keyframes about-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
     }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
     #about .flex-row {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
 
-    #about #pink {
-        margin-top: 0;
+    #about .nested-flex img {
+        position: static;
+        height: auto;
+        aspect-ratio: 1.3;
     }
 
-    .flex-column p {
-        margin: 1rem;
+    #about .nested-flex:nth-child(2) {
+        overflow: visible;
+        border-radius: 0;
     }
 }
 
 @media (max-width: 650px) {
-    #about .textbox {
-        padding: 2.25rem;
+    main {
+        gap: 2rem;
+        width: min(100% - 2rem, 42rem);
     }
 
-    .dropdown-content {
-        line-height: 1.25rem;
+    main > h1 {
+        font-size: clamp(2.25rem, 10vw, 3.5rem);
     }
-}
 
-@media (max-width: 400px) {
     #about .textbox {
         padding: 1.5rem;
+        border-radius: 1rem;
     }
 
-    #faq h2 {
-        font-size: 24px;
+    #faq .dropdown h3 {
+        font-size: 1rem;
     }
 
-    .dropdown-content {
-        line-height: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main > h1,
+    #about {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

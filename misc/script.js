@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname.split("/").pop();
+    const normalizePath = path => path.replace(/\/+$/, '') || '/';
+    const currentPath = normalizePath(window.location.pathname);
     const navLinks = document.querySelectorAll('header nav a');
 
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        if (normalizePath(link.pathname) === currentPath) {
             link.classList.add('active');
         }
     });
