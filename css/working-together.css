@@ -14,15 +14,15 @@ main {
 }
 
 .dark-pink {
-    background-color: #d69ce7;
+    background-color: var(--color-rose-light);
 }
 
 .light-pink {
-    background-color: #f5e6f9;;
+    background-color: var(--color-peach);
 }
 
 .light-pink h3 {
-    color: #a132cd;
+    color: var(--color-forest);
 }
 
 .small-textbox {

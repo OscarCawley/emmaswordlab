@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
 
+:root {
+    --color-rose-light: #f6c6c1;
+    --color-rose: #d68f87;
+    --color-sage: #6f8665;
+    --color-forest: #374e2d;
+    --color-peach: #f4bb9d;
+    --color-terracotta: #cd7242;
+    --color-taupe: #8b6754;
+    --color-brown: #604533;
+    --color-background: #fdf5ed;
+    --color-text: #061a1e;
+}
+
 @keyframes bounce {
 
     0%,
@@ -25,6 +38,8 @@ body {
     font-feature-settings: "lnum";
     min-width: 320px;
     margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 header {
@@ -41,7 +56,7 @@ header img {
 
 header h3 {
     display: inline-block;
-    color: #a132cd;
+    color: var(--color-forest);
     word-spacing: 3rem;
     font-size: 18px;
     font-weight: 400;
@@ -50,25 +65,25 @@ header h3 {
 }
 
 header nav a {
-    color: black;
+    color: var(--color-text);
     padding: 0 1rem;
     font-size: 20px;
     text-decoration: none;
 }
 
 header nav a.active {
-    color: #a132cd;
+    color: var(--color-forest);
 }
 
 header nav a:hover {
-    color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    color: var(--color-background);
+    box-shadow: 0 2px 8px rgba(6, 26, 30, 0.25);
     border-radius: 6px;
-    background-color: #a132cd;
+    background-color: var(--color-forest);
 }
 
 header nav a:active {
-    background-color: #a132cd;
+    background-color: var(--color-sage);
 }
 
 header #main-nav ul {
@@ -119,27 +134,35 @@ footer img {
     font-weight: 500;
     font-family: "Alegreya";
     width: fit-content;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px 2px rgba(6, 26, 30, 0.2);
+    background-color: var(--color-forest);
+    color: var(--color-background);
 }
 
 .w-button:hover {
     animation: bounce 1s ease infinite;
     cursor: pointer;
+    background-color: var(--color-sage);
+    color: var(--color-text);
 }
 
 .w-button:active {
-    background-color: #a132cd;
-    color: white;
-}
-
-.w-button {
-    background-color: white;
-    color: #a132cd;
+    background-color: var(--color-rose);
+    color: var(--color-text);
 }
 
 .hyperlink {
     text-decoration: none;
-    color: #a132cd;
+    color: var(--color-forest);
+}
+
+.hyperlink:hover {
+    color: var(--color-brown);
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-terracotta);
+    outline-offset: 3px;
 }
 
 section {
@@ -166,7 +189,7 @@ h1 {
 h2 {
     margin-top: 0;
     font-size: 32px;
-    color: #a132cd;
+    color: var(--color-forest);
 }
 
 h3 {
@@ -195,7 +218,7 @@ h3 {
     opacity: 0;
     visibility: hidden;
     transition: opacity .35s, visibility .35s;
-    background: black;
+    background: var(--color-text);
     z-index: 3;
     pointer-events: none;
 }
@@ -214,11 +237,11 @@ h3 {
         height: 3rem;
         background: linear-gradient(
             to bottom, 
-            #d69ce7, #d69ce7 20%, 
-            white 20%, white 40%, 
-            #d69ce7 40%, #d69ce7 60%, 
-            white 60%, white 80%, 
-            #d69ce7 80%, #d69ce7 100%);
+            var(--color-forest), var(--color-forest) 20%,
+            var(--color-rose-light) 20%, var(--color-rose-light) 40%,
+            var(--color-forest) 40%, var(--color-forest) 60%,
+            var(--color-rose-light) 60%, var(--color-rose-light) 80%,
+            var(--color-forest) 80%, var(--color-forest) 100%);
         position: absolute;
         top: 0;
         right: 0;
@@ -233,7 +256,7 @@ h3 {
         left: 100%;
         width: 15rem;
         height: 100%;
-        background-color: white;
+        background-color: var(--color-background);
         padding: 0px 1rem;
         box-sizing: border-box;
         z-index: 4;

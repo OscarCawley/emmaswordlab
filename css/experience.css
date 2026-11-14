@@ -5,28 +5,28 @@ section {
 }
 
 .experience {
-    background-color: #f5e6f9;
+    background-color: var(--color-peach);
     padding: 2rem 3rem;
 }
 
 .experience h2 {
     text-align: center;
-    color: #a132cd;
+    color: var(--color-forest);
     font-size: 30px;
     margin: 0;
 }
 
 .experience h3 {
     text-align: center;
-    color: black;
+    color: var(--color-text);
     font-size: 18px;
     margin: 0.25rem 0;
 }
 
 .experience h4 {
     text-align: center;
-    color: white;
-    background-color: #a132cd;
+    color: var(--color-background);
+    background-color: var(--color-forest);
     font-size: 16px;
     margin: 0.25rem auto;
     padding: 0 1rem;

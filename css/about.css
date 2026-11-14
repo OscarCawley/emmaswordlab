@@ -51,12 +51,12 @@
 }
 
 #about #pink {
-    background-color: #d69ce7;
+    background-color: var(--color-rose-light);
     margin-top: 6rem;
 }
 
 #about #l-pink {
-    background-color: #f5e6f9;
+    background-color: var(--color-peach);
 }
 
 #about ul {
@@ -81,7 +81,7 @@
 
 #faq h2 {
     font-size: 32px;
-    color: #a132cd;
+    color: var(--color-forest);
 }
 
 .dropdown {
@@ -96,7 +96,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1.5px solid #d69ce7;
+    border-bottom: 1.5px solid var(--color-rose);
 }
 
 .dropdown h3 {
@@ -107,8 +107,8 @@
 
 .dropdown button {
     border: none;
-    background-color: #f5e6f9;
-    color: #a132cd;
+    background-color: var(--color-rose-light);
+    color: var(--color-forest);
     border-radius: 0.5rem;
     height: 2rem;
     padding: 0 6px;
@@ -119,7 +119,7 @@
     max-height: 0;
     overflow: hidden;
     line-height: 1.5rem;
-    color: rgb(51, 51, 51);
+    color: var(--color-text);
     transition: max-height 0.5s ease, padding 0.5s ease;
     padding: 0 10px;
     margin: 5px 0;

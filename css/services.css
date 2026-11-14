@@ -25,17 +25,17 @@ main {
 
 #application-materials .textbox:nth-child(1),
 #application-materials .textbox:nth-child(4) {
-    background-color: #d69ce7;
+    background-color: var(--color-rose-light);
 }
 
 #application-materials .textbox:nth-child(2),
 #application-materials .textbox:nth-child(3) {
-    background-color: #f5e6f9;
+    background-color: var(--color-peach);
 }
 
 #application-materials .textbox:nth-child(2) h3,
 #application-materials .textbox:nth-child(3) h3{
-    color: #a132cd;
+    color: var(--color-forest);
 }
 
 .textbox {
@@ -74,7 +74,7 @@ main {
 }
 
 .fine-print {
-    color: rgb(53, 53, 53);
+    color: var(--color-text);
     font-size: 0.9em;
 }
 

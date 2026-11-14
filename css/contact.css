@@ -21,7 +21,7 @@ form label {
     margin-bottom: 8px;
     margin-left: 8px;
     font-weight: bold;
-    color: #a132cd;
+    color: var(--color-forest);
 }
 
 input[type="text"],
@@ -31,10 +31,11 @@ select {
     width: 100%;
     padding: 8px;
     margin-bottom: 12px;
-    border: none;
+    border: 1px solid var(--color-taupe);
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #f2edf3;
+    background-color: var(--color-rose-light);
+    color: var(--color-text);
     font-family: "Alegreya";
 }
 
