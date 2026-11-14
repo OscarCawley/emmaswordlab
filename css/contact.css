@@ -1,52 +1,163 @@
-#form {
+main {
     display: flex;
-    align-items: center;
     flex-direction: column;
-}
-
-form {
-    box-sizing: border-box;
-    max-width: 40rem;
-    width: 100%;
+    align-items: stretch;
+    gap: clamp(2rem, 4vw, 3rem);
+    width: min(100% - 3rem, 72rem);
     margin: 0 auto;
-    padding: 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: transparent;
 }
 
-form label {
-    display: block;
+main > h1 {
+    width: 100%;
+    margin: 0;
+    color: var(--color-forest);
+    font-size: var(--font-page-title);
+    line-height: 1.1;
+    text-align: center;
+    animation: contact-enter 700ms ease both;
+}
+
+#form {
+    box-sizing: border-box;
+    width: min(100%, 56rem);
+    margin: 0 auto;
+    padding: var(--card-padding);
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-rose);
+    border-radius: 1.25rem;
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    animation: contact-enter 800ms 100ms ease both;
+}
+
+#form form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 1.5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+}
+
+#form .form-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.45rem;
+}
+
+#form .form-field--full,
+#form input[type="image"] {
+    grid-column: 1 / -1;
+}
+
+#form label {
+    margin: 0;
+    color: var(--color-forest);
+    font-size: 1.05rem;
+    font-weight: 600;
     text-align: left;
-    margin-bottom: 8px;
-    margin-left: 8px;
-    font-weight: bold;
-    color: #a132cd;
 }
 
-input[type="text"],
-input[type="email"],
-textarea,
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: none;
-    border-radius: 4px;
+#form input[type="text"],
+#form input[type="email"],
+#form textarea {
     box-sizing: border-box;
-    background-color: #f2edf3;
-    font-family: "Alegreya";
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid rgba(55, 78, 45, 0.24);
+    border-radius: 0.65rem;
+    outline: none;
+    background-color: #fffdfb;
+    color: var(--color-text);
+    font: inherit;
+    line-height: 1.5;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
 
-input[type="image"] {
+#form textarea {
+    min-height: 11rem;
+    resize: vertical;
+}
+
+#form input[type="text"]:focus,
+#form input[type="email"]:focus,
+#form textarea:focus {
+    border-color: var(--color-forest);
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(55, 78, 45, 0.12);
+}
+
+#form input[type="image"] {
     display: block;
-    width: 5rem;
+    justify-self: center;
+    width: 4.5rem;
     height: auto;
-    margin: 0 auto;
-    margin-top: 1rem;
+    margin: 0.25rem auto 0;
+    transition: transform 180ms ease;
 }
 
-input[type="image"]:hover {
-    animation: bounce 1s ease infinite;
+#form input[type="image"]:hover {
+    transform: translateY(-2px);
     cursor: pointer;
+}
+
+#form input[type="image"]:focus-visible {
+    outline: 3px solid var(--color-forest);
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+}
+
+@keyframes contact-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        gap: 2rem;
+        width: min(100% - 2rem, 42rem);
+    }
+
+    #form {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    #form form {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    #form .form-field--full,
+    #form input[type="image"] {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main > h1,
+    #form {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }

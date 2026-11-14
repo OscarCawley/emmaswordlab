@@ -1,24 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname.split("/").pop();
+    const normalizePath = path => path.replace(/\/+$/, '') || '/';
+    const currentPath = normalizePath(window.location.pathname);
     const navLinks = document.querySelectorAll('header nav a');
 
     navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        if (normalizePath(link.pathname) === currentPath) {
             link.classList.add('active');
         }
     });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    PayPal.Donation.Button({
-        env: 'production',
-        hosted_button_id: 'XPFHXBAC5H9LL',
-        image: {
-            src: 'https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif',
-            alt: 'Donate with PayPal button',
-            title: 'PayPal - The safer, easier way to pay online!',
-        }
-    }).render('#donate-button');
 });
 
 function toggleDropdown(index) {
@@ -38,14 +27,18 @@ function toggleDropdown(index) {
     }
 }
 
-// Add a click event listener to the document
 document.addEventListener('click', function(event) {
-    // Get the checkbox element
     const checkbox = document.getElementById('hamburger-input');
-    
-    // Check if the click target is NOT the checkbox itself
-    if (event.target !== checkbox) {
-        // Uncheck the checkbox
-        checkbox.checked = false;
+    const menuButton = document.getElementById('hamburger-menu');
+    const sidebar = document.getElementById('sidebar-menu');
+
+    if (
+        event.target === checkbox ||
+        menuButton.contains(event.target) ||
+        sidebar.contains(event.target)
+    ) {
+        return;
     }
+
+    checkbox.checked = false;
 });

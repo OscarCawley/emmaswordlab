@@ -1,85 +1,142 @@
-section {
-    max-width: 50rem;
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    width: min(100% - 3rem, 72rem);
     margin: 0 auto;
-    margin-bottom: 3rem;
+    text-align: left;
 }
 
-.experience {
-    background-color: #f5e6f9;
-    padding: 2rem 3rem;
-}
-
-.experience h2 {
+main > h1 {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0 0 clamp(0.75rem, 2vw, 1.5rem);
+    color: var(--color-forest);
+    font-size: var(--font-page-title);
+    line-height: 1.1;
     text-align: center;
-    color: #a132cd;
-    font-size: 30px;
+    animation: experience-enter 700ms ease both;
+}
+
+main > .experience {
+    box-sizing: border-box;
+    min-width: 0;
     margin: 0;
+    padding: var(--card-padding);
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-rose);
+    border-radius: 1.25rem;
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    animation: experience-enter 800ms 100ms ease both;
 }
 
-.experience h3 {
-    text-align: center;
-    color: black;
-    font-size: 18px;
-    margin: 0.25rem 0;
+main > .experience:hover {
+    transform: translateY(-2px);
+    border-color: rgba(55, 78, 45, 0.28);
+    box-shadow: 0 1rem 2.25rem rgba(6, 26, 30, 0.08);
 }
 
-.experience h4 {
-    text-align: center;
-    color: white;
-    background-color: #a132cd;
-    font-size: 16px;
-    margin: 0.25rem auto;
-    padding: 0 1rem;
-    max-width: fit-content;
-    border-radius: 1rem;
+main > .experience:first-of-type {
+    grid-column: 1 / -1;
 }
 
-@media (max-width: 950px) {
-    section {
-        max-width: 80%;
+main > .experience:nth-of-type(2) {
+    border-top-color: var(--color-terracotta);
+}
+
+main > .experience:nth-of-type(3) {
+    border-top-color: var(--color-terracotta);
+}
+
+main > .experience h2 {
+    margin: 0 0 1rem;
+    color: var(--color-forest);
+    font-size: var(--font-section-title);
+    line-height: 1.25;
+    text-align: left;
+}
+
+main > .experience h3 {
+    margin: 0 0 0.35rem;
+    color: var(--color-text);
+    font-size: var(--font-card-title);
+    line-height: 1.3;
+    text-align: left;
+}
+
+main > .experience h4 {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 0 1.25rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-radius: 999px;
+    background-color: #fffdfb;
+    color: var(--color-forest);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: left;
+}
+
+main > .experience p,
+main > .experience li {
+    font-size: 1rem;
+    line-height: var(--line-height-body);
+}
+
+main > .experience p {
+    margin: 0 0 1rem;
+    text-align: justify;
+}
+
+main > .experience ul {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding-left: 1.35rem;
+}
+
+main > .experience li {
+    padding-left: 0.15rem;
+}
+
+@keyframes experience-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 850px) {
-    section {
-        max-width: 80%;
+@media (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: min(100% - 2rem, 42rem);
+    }
+
+    main > .experience:first-of-type {
+        grid-column: auto;
     }
 }
 
-@media (max-width: 650px) {
-    .experience h2 {
-        font-size: 28px;
+@media (prefers-reduced-motion: reduce) {
+    main > h1,
+    main > .experience {
+        animation: none;
     }
 
-    .experience h3 {
-        font-size: 17px;
-    }
-
-    .experience h4 {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 550px) {
-    section {
-        max-width: 70%;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-
-    li {
-        line-height: 1.25rem;
-    }
-
-    p {
-        line-height: 1.5rem;
-    }
-}
-
-@media (max-width: 330px) {
-    .experience h2 {
-        font-size: 26px;
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
