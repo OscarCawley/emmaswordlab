@@ -10,18 +10,10 @@
     max-width: 27rem;
     background-color: #d69ce7;
     padding: 2.5rem;
-    margin-right: -1.25rem;
-    z-index: 2;
 }
 
 #intro p {
     margin: 0;
-}
-
-#intro img {
-    width: 27rem;
-    margin-left: -1.25rem;
-    z-index: 1;
 }
 
 #why {
@@ -96,12 +88,6 @@
     padding: 2rem;
 }
 
-#info img {
-    border: none;
-    border-radius: 1rem;
-    margin-right: 1rem;
-}
-
 #info div {
     background-color: white;
     border: none;
@@ -125,21 +111,12 @@
 }
 
 @media (max-width: 1450px) {
-    #info img {
-        display: none;
-    }
-
     #info div {
         margin-left: 0;
     }
 }
 
 @media (max-width: 900px) {
-
-    #intro img {
-        display: none;
-    }
-
     #intro div {
         margin-right: 1rem;
         margin-left: 1rem;

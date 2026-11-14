@@ -6,11 +6,6 @@ main {
     padding: 0 1rem;
 }
 
-img[alt="Working Together"] {
-    width: 35%;
-    margin-bottom: 1rem;
-}
-
 .flex-row {
     display: flex;
     flex-direction: row;
@@ -82,10 +77,6 @@ img[alt="PDF"] {
 }
 
 @media (max-width: 650px) {
-    img[alt="Working Together"] {
-        width: 40%;
-    }
-
     img[alt="PDF"] {
         width: 4.5rem;
     }
@@ -99,11 +90,6 @@ img[alt="PDF"] {
 @media (max-width: 550px) {
     .textbox ul {
         padding-left: 30px;
-    }
-
-    img[alt="Working Together"] {
-        width: 50%;
-        margin-bottom: 2.5rem;
     }
 
     img[alt="PDF"] {
@@ -125,13 +111,7 @@ img[alt="PDF"] {
 
 @media (max-width: 350px) {
 
-    img[alt="Working Together"] {
-        width: 60%;
-        margin-bottom: 2rem;
-    }
-
     img[alt="PDF"] {
         width: 3.5rem;
     }
 }
-
