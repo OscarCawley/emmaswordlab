@@ -1,94 +1,301 @@
 main {
-    margin: 0 auto;
-    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: clamp(2rem, 4vw, 3rem);
+    width: min(100% - 3rem, 72rem);
+    margin: 0 auto;
 }
 
-#cvs-cover-letters {
-    max-width: 60rem;
-    width: 85%;
-}
-
-#cvs-cover-letters p {
+main > h1 {
+    width: 100%;
+    margin: 0;
+    color: var(--color-forest);
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    line-height: 1.08;
     text-align: center;
+    animation: services-enter 700ms ease both;
 }
 
 #application-materials {
-    max-width: 80rem;
-    width: 95%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    margin: 0;
+    animation: services-enter 800ms 100ms ease both;
 }
 
-#application-materials .textbox:nth-child(1),
-#application-materials .textbox:nth-child(4) {
+#application-materials .textbox {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-radius: 1.25rem;
     background-color: var(--color-rose-light);
+    text-align: left;
 }
 
-#application-materials .textbox:nth-child(2),
-#application-materials .textbox:nth-child(3) {
+#application-materials .personal-statements-card,
+#application-materials .cv-cover-letters-card {
     background-color: var(--color-peach);
 }
 
-#application-materials .textbox:nth-child(2) h3,
-#application-materials .textbox:nth-child(3) h3{
-    color: var(--color-forest);
+#application-materials .blog-posts-card,
+#application-materials .websites-card {
+    background-color: var(--color-rose-light);
 }
 
-.textbox {
+#application-materials .textbox h2,
+#application-materials .textbox h3 {
+    margin: 0 0 1rem;
+    color: var(--color-text);
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    line-height: 1.25;
+    text-align: left;
+}
+
+#application-materials .textbox p {
+    margin: 0 0 0.9rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+#application-materials .textbox ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+}
+
+#application-materials .textbox li {
+    margin-bottom: 0.55rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+}
+
+#application-materials .textbox li:last-child {
+    margin-bottom: 0;
+}
+
+#application-materials .textbox .fine-print,
+#bottom-text .fine-print {
+    color: var(--color-brown);
+    font-size: 0.9em;
+}
+
+#application-materials .textbox .fine-print {
+    font-weight: 600;
+}
+
+#application-materials .fiction-card {
+    grid-column: 1 / -1;
+    padding: clamp(2rem, 4vw, 3rem);
+    border: 1px solid rgba(55, 78, 45, 0.12);
+    background-color: var(--color-rose-light);
+}
+
+#application-materials .fiction-card h2 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.fiction-services {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.fiction-service {
     display: flex;
     flex-direction: column;
-    text-align: justify;
-    padding: 2rem;
+    min-width: 0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: var(--color-background);
+}
+
+.fiction-service h3 {
+    color: var(--color-forest) !important;
+    font-size: 1.2rem !important;
 }
 
 .textbox-footer {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    box-sizing: border-box;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
+    min-height: 4.5rem;
     margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(6, 26, 30, 0.12);
 }
 
 .textbox-footer .fine-print {
-    margin: 0;
+    margin: 0 !important;
+}
+
+.card-rates {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+.card-rates .fine-print {
+    margin: 0 !important;
 }
 
 .textbox-footer .w-button {
-    display: block;
+    display: inline-block;
+    flex: 0 0 auto;
     margin: 0;
+    border-radius: 999px;
+    padding: 0.65rem 1.1rem;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
 }
 
-.textbox h3 {
-    text-align: center;
+.fiction-note {
+    grid-column: 1 / -1;
+    padding: 1.5rem clamp(1.5rem, 3vw, 2.5rem);
+    border-left: 4px solid var(--color-forest);
+    border-radius: 0.25rem 1rem 1rem 0.25rem;
+    background-color: var(--color-background);
+}
+
+.fiction-note p {
+    margin: 0;
+    text-align: left;
+}
+
+.fiction-note p:first-child {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.fiction-note p:last-child {
+    max-width: 65rem;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    line-height: 1.5;
+}
+
+.fiction-card-footer {
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.fiction-card-footer p {
+    margin: 0 auto 0 0 !important;
+    font-weight: 600;
 }
 
 #bottom-text {
-    max-width: 60rem;
-    width: 85%;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1.5rem clamp(1.5rem, 3vw, 2.5rem);
+    border-left: 4px solid var(--color-forest);
+    border-radius: 0.25rem 1rem 1rem 0.25rem;
+    background-color: var(--color-background);
+    text-align: left;
 }
 
-.fine-print {
-    color: var(--color-text);
-    font-size: 0.9em;
+#bottom-text p {
+    margin: 0 0 0.9rem;
+    line-height: 1.75;
+    text-align: left;
 }
 
-@media (max-width: 1000px) {
+#bottom-text p:first-child {
+    max-width: 65rem;
+    font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+}
+
+#bottom-text p:last-child {
+    margin-bottom: 0;
+    color: var(--color-brown);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@keyframes services-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    main {
+        width: min(100% - 2.5rem, 48rem);
+    }
+
+    .fiction-services {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        gap: 2rem;
+        width: min(100% - 2rem, 42rem);
+    }
+
+    main > h1 {
+        font-size: clamp(2.25rem, 10vw, 3.5rem);
+    }
+
     #application-materials {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    #application-materials .textbox:nth-child(3) {
-        order: 4;
+    #application-materials .textbox,
+    #application-materials .fiction-card {
+        grid-column: auto;
+        padding: 1.5rem;
+        border-radius: 1rem;
     }
 
-    #application-materials .textbox:nth-child(4) {
-        order: 3;
+    .fiction-services {
+        gap: 1rem;
+    }
+
+    .fiction-service {
+        padding: 1.25rem;
+    }
+
+    .fiction-note {
+        padding: 1.25rem;
+    }
+
+    .textbox-footer {
+        min-height: 4.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main > h1,
+    #application-materials {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
