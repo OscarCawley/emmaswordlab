@@ -222,7 +222,23 @@ main > h1 {
     align-items: stretch;
     justify-content: initial;
     margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-terracotta);
+    border-radius: 1.5rem;
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
     animation: home-enter 800ms 100ms ease both;
+}
+
+#intro:hover,
+#why:hover,
+#why-editor:hover,
+#info:hover {
+    transform: translateY(-2px);
+    border-color: rgba(55, 78, 45, 0.28);
+    box-shadow: 0 1rem 2.25rem rgba(6, 26, 30, 0.08);
 }
 
 #intro div {
@@ -232,8 +248,7 @@ main > h1 {
     justify-content: center;
     max-width: none;
     padding: clamp(2rem, 5vw, 4rem);
-    border-radius: 1.5rem 0 0 1.5rem;
-    background-color: var(--color-rose-light);
+    background-color: #fffaf5;
 }
 
 #intro p {
@@ -268,14 +283,18 @@ main > h1 {
     aspect-ratio: auto;
     object-fit: cover;
     object-position: center 35%;
-    border-radius: 0 1.5rem 1.5rem 0;
+    border-radius: 0;
 }
 
 #why {
     align-items: flex-start;
     padding: clamp(2.5rem, 6vw, 4.5rem);
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-terracotta);
     border-radius: 1.5rem;
-    background-color: var(--color-peach);
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
     text-align: left;
 }
 
@@ -284,8 +303,12 @@ main > h1 {
     flex-direction: column;
     align-items: flex-start;
     padding: clamp(2.5rem, 6vw, 4.5rem);
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-rose);
     border-radius: 1.5rem;
-    background-color: var(--color-rose-light);
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
     text-align: left;
 }
 
@@ -324,7 +347,7 @@ main > h1 {
     padding: 1.75rem;
     border: 1px solid rgba(55, 78, 45, 0.14);
     border-radius: 1.25rem;
-    background-color: var(--color-background);
+    background-color: #fffaf5;
     box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.06);
     transition: transform 200ms ease, box-shadow 200ms ease;
 }
@@ -359,8 +382,12 @@ main > h1 {
     justify-content: center;
     margin: 0;
     padding: clamp(2.5rem, 6vw, 4rem);
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-forest);
     border-radius: 1.5rem;
-    background-color: var(--color-peach);
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 #info div {
@@ -467,7 +494,6 @@ main > h1 {
     #intro div {
         order: 2;
         padding: 1.75rem;
-        border-radius: 0 0 1.25rem 1.25rem;
     }
 
     #intro img {
@@ -477,7 +503,6 @@ main > h1 {
         min-height: 0;
         aspect-ratio: 1.15;
         object-position: center 32%;
-        border-radius: 1.25rem 1.25rem 0 0;
     }
 
     #why,
