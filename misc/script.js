@@ -26,14 +26,18 @@ function toggleDropdown(index) {
     }
 }
 
-// Add a click event listener to the document
 document.addEventListener('click', function(event) {
-    // Get the checkbox element
     const checkbox = document.getElementById('hamburger-input');
-    
-    // Check if the click target is NOT the checkbox itself
-    if (event.target !== checkbox) {
-        // Uncheck the checkbox
-        checkbox.checked = false;
+    const menuButton = document.getElementById('hamburger-menu');
+    const sidebar = document.getElementById('sidebar-menu');
+
+    if (
+        event.target === checkbox ||
+        menuButton.contains(event.target) ||
+        sidebar.contains(event.target)
+    ) {
+        return;
     }
+
+    checkbox.checked = false;
 });
