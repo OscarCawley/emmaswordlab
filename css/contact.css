@@ -17,7 +17,9 @@ form {
 
 form label {
     display: block;
+    text-align: left;
     margin-bottom: 8px;
+    margin-left: 8px;
     font-weight: bold;
     color: #a132cd;
 }
