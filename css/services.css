@@ -11,8 +11,8 @@ main > h1 {
     width: 100%;
     margin: 0;
     color: var(--color-forest);
-    font-size: clamp(2.5rem, 5vw, 4.25rem);
-    line-height: 1.08;
+    font-size: var(--font-page-title);
+    line-height: 1.1;
     text-align: center;
     animation: services-enter 700ms ease both;
 }
@@ -32,7 +32,7 @@ main > h1 {
     flex-direction: column;
     align-items: stretch;
     min-width: 0;
-    padding: clamp(1.5rem, 3vw, 2.25rem);
+    padding: var(--card-padding);
     border-radius: 1.25rem;
     border: 1px solid rgba(55, 78, 45, 0.14);
     background-color: #fffaf5;
@@ -61,16 +61,16 @@ main > h1 {
 #application-materials .textbox h3 {
     margin: 0 0 1rem;
     color: var(--color-text);
-    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
-    line-height: 1.25;
+    font-size: var(--font-card-title);
+    line-height: 1.3;
     text-align: left;
 }
 
-#application-materials .textbox p {
+#application-materials .textbox p:not(.fine-print) {
     margin: 0 0 0.9rem;
     font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
+    line-height: var(--line-height-body);
+    text-align: justify;
 }
 
 #application-materials .textbox ul {
@@ -81,7 +81,7 @@ main > h1 {
 #application-materials .textbox li {
     margin-bottom: 0.55rem;
     font-size: 1rem;
-    line-height: 1.65;
+    line-height: var(--line-height-body);
     text-align: left;
 }
 
@@ -101,13 +101,13 @@ main > h1 {
 
 #application-materials .fiction-card {
     grid-column: 1 / -1;
-    padding: clamp(2rem, 4vw, 3rem);
+    padding: var(--card-padding);
     border-top: 3px solid var(--color-forest);
 }
 
 #application-materials .fiction-card h2 {
-    margin-bottom: 1.5rem;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    margin-bottom: 1rem;
+    font-size: var(--font-section-title);
 }
 
 .fiction-services {
@@ -129,7 +129,7 @@ main > h1 {
 
 .fiction-service h3 {
     color: var(--color-forest) !important;
-    font-size: 1.2rem !important;
+    font-size: var(--font-card-title) !important;
 }
 
 .textbox-footer {
@@ -216,7 +216,7 @@ main > h1 {
 
 #bottom-text p {
     margin: 0 0 0.9rem;
-    line-height: 1.75;
+    line-height: var(--line-height-body);
     text-align: center;
 }
 
@@ -260,10 +260,6 @@ main > h1 {
     main {
         gap: 2rem;
         width: min(100% - 2rem, 42rem);
-    }
-
-    main > h1 {
-        font-size: clamp(2.25rem, 10vw, 3.5rem);
     }
 
     #application-materials {

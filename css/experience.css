@@ -12,8 +12,8 @@ main > h1 {
     width: 100%;
     margin: 0 0 clamp(0.75rem, 2vw, 1.5rem);
     color: var(--color-forest);
-    font-size: clamp(2.5rem, 5vw, 4.25rem);
-    line-height: 1.08;
+    font-size: var(--font-page-title);
+    line-height: 1.1;
     text-align: center;
     animation: experience-enter 700ms ease both;
 }
@@ -22,7 +22,7 @@ main > .experience {
     box-sizing: border-box;
     min-width: 0;
     margin: 0;
-    padding: clamp(1.5rem, 3vw, 2.5rem);
+    padding: var(--card-padding);
     border: 1px solid rgba(55, 78, 45, 0.14);
     border-top: 3px solid var(--color-rose);
     border-radius: 1.25rem;
@@ -51,9 +51,9 @@ main > .experience:nth-of-type(3) {
 }
 
 main > .experience h2 {
-    margin: 0 0 1.25rem;
+    margin: 0 0 1rem;
     color: var(--color-forest);
-    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-size: var(--font-section-title);
     line-height: 1.25;
     text-align: left;
 }
@@ -61,8 +61,8 @@ main > .experience h2 {
 main > .experience h3 {
     margin: 0 0 0.35rem;
     color: var(--color-text);
-    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
-    line-height: 1.35;
+    font-size: var(--font-card-title);
+    line-height: 1.3;
     text-align: left;
 }
 
@@ -84,11 +84,12 @@ main > .experience h4 {
 main > .experience p,
 main > .experience li {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: var(--line-height-body);
 }
 
 main > .experience p {
     margin: 0 0 1rem;
+    text-align: justify;
 }
 
 main > .experience ul {
@@ -119,10 +120,6 @@ main > .experience li {
         grid-template-columns: 1fr;
         gap: 1rem;
         width: min(100% - 2rem, 42rem);
-    }
-
-    main > h1 {
-        font-size: clamp(2.25rem, 10vw, 3.5rem);
     }
 
     main > .experience:first-of-type {
