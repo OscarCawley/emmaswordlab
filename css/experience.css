@@ -1,85 +1,145 @@
-section {
-    max-width: 50rem;
+main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    width: min(100% - 3rem, 72rem);
     margin: 0 auto;
-    margin-bottom: 3rem;
+    text-align: left;
 }
 
-.experience {
-    background-color: var(--color-peach);
-    padding: 2rem 3rem;
-}
-
-.experience h2 {
-    text-align: center;
+main > h1 {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0 0 clamp(0.75rem, 2vw, 1.5rem);
     color: var(--color-forest);
-    font-size: 30px;
+    font-size: clamp(2.5rem, 5vw, 4.25rem);
+    line-height: 1.08;
+    text-align: center;
+    animation: experience-enter 700ms ease both;
+}
+
+main > .experience {
+    box-sizing: border-box;
+    min-width: 0;
     margin: 0;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-top: 3px solid var(--color-rose);
+    border-radius: 1.25rem;
+    background-color: #fffaf5;
+    box-shadow: 0 0.75rem 2rem rgba(6, 26, 30, 0.05);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    animation: experience-enter 800ms 100ms ease both;
 }
 
-.experience h3 {
-    text-align: center;
+main > .experience:hover {
+    transform: translateY(-2px);
+    border-color: rgba(55, 78, 45, 0.28);
+    box-shadow: 0 1rem 2.25rem rgba(6, 26, 30, 0.08);
+}
+
+main > .experience:first-of-type {
+    grid-column: 1 / -1;
+}
+
+main > .experience:nth-of-type(2) {
+    border-top-color: var(--color-terracotta);
+}
+
+main > .experience:nth-of-type(3) {
+    border-top-color: var(--color-terracotta);
+}
+
+main > .experience h2 {
+    margin: 0 0 1.25rem;
+    color: var(--color-forest);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    line-height: 1.25;
+    text-align: left;
+}
+
+main > .experience h3 {
+    margin: 0 0 0.35rem;
     color: var(--color-text);
-    font-size: 18px;
-    margin: 0.25rem 0;
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+    line-height: 1.35;
+    text-align: left;
 }
 
-.experience h4 {
-    text-align: center;
-    color: var(--color-background);
-    background-color: var(--color-forest);
-    font-size: 16px;
-    margin: 0.25rem auto;
-    padding: 0 1rem;
-    max-width: fit-content;
-    border-radius: 1rem;
+main > .experience h4 {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 0 1.25rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid rgba(55, 78, 45, 0.14);
+    border-radius: 999px;
+    background-color: #fffdfb;
+    color: var(--color-forest);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: left;
 }
 
-@media (max-width: 950px) {
-    section {
-        max-width: 80%;
-    }
+main > .experience p,
+main > .experience li {
+    font-size: 1rem;
+    line-height: 1.75;
 }
 
-@media (max-width: 850px) {
-    section {
-        max-width: 80%;
-    }
+main > .experience p {
+    margin: 0 0 1rem;
 }
 
-@media (max-width: 650px) {
-    .experience h2 {
-        font-size: 28px;
-    }
-
-    .experience h3 {
-        font-size: 17px;
-    }
-
-    .experience h4 {
-        font-size: 15px;
-    }
+main > .experience ul {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding-left: 1.35rem;
 }
 
-@media (max-width: 550px) {
-    section {
-        max-width: 70%;
+main > .experience li {
+    padding-left: 0.15rem;
+}
+
+@keyframes experience-enter {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
     }
 
-    ul {
-        padding-left: 20px;
-    }
-
-    li {
-        line-height: 1.25rem;
-    }
-
-    p {
-        line-height: 1.5rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 330px) {
-    .experience h2 {
-        font-size: 26px;
+@media (max-width: 700px) {
+    main {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: min(100% - 2rem, 42rem);
+    }
+
+    main > h1 {
+        font-size: clamp(2.25rem, 10vw, 3.5rem);
+    }
+
+    main > .experience:first-of-type {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main > h1,
+    main > .experience {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
